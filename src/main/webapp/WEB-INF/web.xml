@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>LibraryProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>addbook.jsp</welcome-file>
+    <welcome-file>issuebook.jsp</welcome-file>
+    <welcome-file>returnbook.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Database</servlet-name>
+    <servlet-class>Database</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>AddBookServlet</servlet-name>
+    <servlet-class>AddBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddBookServlet</servlet-name>
+    <url-pattern>/AddBookServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>BooksServlet</servlet-name>
+    <servlet-class>BooksServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BooksServlet</servlet-name>
+    <url-pattern>/BooksServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>IssueBookServlet</servlet-name>
+    <servlet-class>IssueBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IssueBookServlet</servlet-name>
+    <url-pattern>/IssueBookServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ReturnBookServlet</servlet-name>
+    <servlet-class>ReturnBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReturnBookServlet</servlet-name>
+    <url-pattern>/ReturnBookServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EmployeeDetails</servlet-name>
+    <servlet-class>EmployeeDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeDetails</servlet-name>
+    <url-pattern>/EmployeeDetails</url-pattern>
+  </servlet-mapping>
+</web-app>

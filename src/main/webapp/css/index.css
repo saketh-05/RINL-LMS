@@ -1,0 +1,84 @@
+body {
+  background-image: url(lib.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lp {
+  min-width: 330px;
+  padding: 25px;
+  padding-right: 0;
+  opacity: 0.8;
+  height: auto;
+  background-color: rgb(27, 2, 2);
+  display: flex;
+  margin-top: 6%;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 2px solid #100909;
+  border-radius: 20px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.388);
+}
+
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+form {
+  color: white;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+    Geneva, Verdana, sans-serif;
+}
+
+#empid {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  max-width: 300px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
