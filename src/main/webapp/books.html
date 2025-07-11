@@ -4,29 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books - Library Management System</title>
+    <!-- Tailwind CSS -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Knewave&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/login.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
       body {
-        background: rgb(232, 233, 20);
-        background: linear-gradient(
-          90deg,
-          rgba(232, 233, 20, 1) 20%,
-          rgba(21, 235, 233, 1) 80%
-        );
-        font-family: Arial, sans-serif;
+        background: rgb(149, 234, 241);
+        font-family: "Sora", sans-serif;
       }
       td {
         color: black;
+      }
+      #logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 0.5%;
       }
     </style>
   </head>
   <body>
     <nav>
-      <img src="css/vsplogo.jpg" alt="Visakhapatnam Steel Plant" />
+      <img id="logo" src="css/logo.jpg" alt="Visakhapatnam Steel Plant" />
       <div class="logo"></div>
       <ul class="nav-links">
-        <li><a href="login.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="issuebook.html">Issue Book</a></li>
         <li><a href="returnbook.html">Return Book</a></li>
@@ -75,67 +85,65 @@
     </div>
     <script>
       // Function to retrieve data from the database
-         function retrieveData() {
-             $.ajax({
-                 type: "POST",
-                 url: "BooksServlet", // The servlet or endpoint to retrieve data
-                 success: function (response) {
-                     console.log("Data retrieved successfully:", response);
-                     // Process the response data here
-                     if(response.status === 'success'){
-                     	displayData(response.books);
-                     } else{
-                     	console.log(response.message);
-                     }
-                 },
-                 error: function () {
-                     console.error("An error occurred while retrieving data.");
-                 }
-             });
-         }
-         function displayData(books){
-         	const bookTableBody = document.querySelector("#book-list-table tbody");
-             bookTableBody.innerHTML = '';
-             if (books.length > 0) {
-                 books.forEach(book => {
-                     const row = document.createElement("tr");
-
-                     const idCell = document.createElement("td");
-                     idCell.textContent = book.bookid;
-                     row.appendChild(idCell);
-
-                     const titleCell = document.createElement("td");
-                     titleCell.textContent = book.title;
-                     row.appendChild(titleCell);
-
-                     const authorCell = document.createElement("td");
-                     authorCell.textContent = book.authorname;
-                     row.appendChild(authorCell);
-
-                     const genreCell = document.createElement("td");
-                     genreCell.textContent = book.genre;
-                     row.appendChild(genreCell);
-
-                     const statusCell = document.createElement("td");
-                     statusCell.textContent = book.status;
-                     row.appendChild(statusCell);
-
-                     bookTableBody.appendChild(row);
-                 });
-             } else {
-                 const noBookRow = document.createElement('tr');
-                 const noBookCell = document.createElement('td');
-                 noBookCell.textContent = 'No book found.';
-                 noBookCell.colSpan = 4;
-                 noBookCell.classList.add('no-book');
-                 noBookRow.appendChild(noBookCell);
-                 bookTableBody.appendChild(noBookRow);
+      function retrieveData() {
+        $.ajax({
+          type: "POST",
+          url: "BooksServlet", // The servlet or endpoint to retrieve data
+          success: function (response) {
+            console.log("Data retrieved successfully:", response);
+            // Process the response data here
+            if (response.status === "success") {
+              displayData(response.books);
+            } else {
+              console.log(response.message);
             }
+          },
+          error: function () {
+            console.error("An error occurred while retrieving data.");
+          },
+        });
+      }
+      function displayData(books) {
+        const bookTableBody = document.querySelector("#book-list-table tbody");
+        bookTableBody.innerHTML = "";
+        if (books.length > 0) {
+          books.forEach((book) => {
+            const row = document.createElement("tr");
 
+            const idCell = document.createElement("td");
+            idCell.textContent = book.bookid;
+            row.appendChild(idCell);
 
-         }
-         // Call the function to retrieve data when the page is loaded
-         retrieveData();
+            const titleCell = document.createElement("td");
+            titleCell.textContent = book.title;
+            row.appendChild(titleCell);
+
+            const authorCell = document.createElement("td");
+            authorCell.textContent = book.authorname;
+            row.appendChild(authorCell);
+
+            const genreCell = document.createElement("td");
+            genreCell.textContent = book.genre;
+            row.appendChild(genreCell);
+
+            const statusCell = document.createElement("td");
+            statusCell.textContent = book.status;
+            row.appendChild(statusCell);
+
+            bookTableBody.appendChild(row);
+          });
+        } else {
+          const noBookRow = document.createElement("tr");
+          const noBookCell = document.createElement("td");
+          noBookCell.textContent = "No book found.";
+          noBookCell.colSpan = 4;
+          noBookCell.classList.add("no-book");
+          noBookRow.appendChild(noBookCell);
+          bookTableBody.appendChild(noBookRow);
+        }
+      }
+      // Call the function to retrieve data when the page is loaded
+      retrieveData();
     </script>
   </body>
 </html>

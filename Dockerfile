@@ -1,11 +1,7 @@
-# Use an official Tomcat image as a parent image
-FROM tomcat:9.0
+FROM tomcat:10.1.43-jdk21-temurin-jammy
+# 10.1.43-jdk21-temurin-jammy, 10.1-jdk21-temurin-jammy
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY LibraryProject.war /usr/local/tomcat/webapps/ROOT.war
 
-# Copy the WAR file to the webapps directory in Tomcat
-COPY LibraryProject.war /usr/local/tomcat/webapps/
-
-# Expose port 8080
 EXPOSE 3333
-# Start Tomcat server
 CMD ["catalina.sh", "run"]
-

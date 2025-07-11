@@ -4,25 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Return Book - Library Management System</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Knewave&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/login.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
       body {
-        background: rgb(232, 233, 20);
-        background: linear-gradient(
-          90deg,
-          rgba(232, 233, 20, 1) 20%,
-          rgba(21, 235, 233, 1) 80%
-        );
+        background: rgb(149, 234, 241);
+        font-family: 'Sora', sans-serif;
+      }
+      #logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 0.5%;
       }
     </style>
   </head>
   <body>
     <nav>
-      <img src="css/vsplogo.jpg" alt="Visakhapatnam Steel Plant" />
+      <img id="logo" src="css/logo.jpg" alt="Visakhapatnam Steel Plant" />
       <div class="logo"></div>
       <ul class="nav-links">
-        <li><a href="login.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="issuebook.html">Issue Book</a></li>
         <li><a href="returnbook.html">Return Book</a></li>
